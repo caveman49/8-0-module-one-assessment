@@ -186,7 +186,19 @@ function filterByGenre(movies, genre) {
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear() {}
+function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
+  let moviesYear = [];
+
+  if (!movies.length) {
+    return [];
+  }
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].released <= year) {
+      moviesYear.push(movies[i]);
+    }
+  }
+  return moviesYear;
+}
 
 /**
  * getBiggestBoxOfficeMovie()
@@ -200,10 +212,13 @@ function getAllMoviesReleasedAtOrBeforeYear() {}
  *  //> "Incredibles 2"
  */
 function getBiggestBoxOfficeMovie(movies) {
-  let highestBoxOffice = Number(movies[0].boxOffice);
-  let highestBoxOfficeTitle = "";
-  
-  for (let i = 0; i < movies.length; i++) {
+  if (!movies.length) {
+    return null;
+  }
+  // let highestBoxOffice = Number(movies[0].boxOffice);
+  // let highestBoxOfficeTitle = "";
+
+  // for (let i = 0; i < movies.length; i++) {
   //   if (Number(movies[i].boxOffice) > highestBoxOffice) {
   //     highestBoxOffice = Number(movies[i].boxOffice);
   //     highestBoxOfficeTitle = movies[i].title
@@ -212,7 +227,7 @@ function getBiggestBoxOfficeMovie(movies) {
   // return highestBoxOfficeTitle;
 
   let highestBoxOfficeTitle = movies[0];
-  
+
   for (let i = 0; i < movies.length; i++) {
     if (Number(movies[i].boxOffice) > Number(highestBoxOfficeTitle.boxOffice)) {
       highestBoxOfficeTitle = movies[i];
