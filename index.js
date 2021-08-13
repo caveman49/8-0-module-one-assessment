@@ -28,7 +28,14 @@ const exampleMovies = require("./movies");
       "James and the Giant Peach",
     ];
  */
-function getAllMovieTitles() {}
+function getAllMovieTitles(movies) {
+  let movieTitles = [];
+  for (let i = 0; i < movies.length; i++) {
+    movieTitles.push(movies[i].title);
+  }
+  return movieTitles;
+}
+console.log(getAllMovieTitles(exampleMovies));
 
 /**
  * getHighestMetascore()
@@ -41,7 +48,7 @@ function getAllMovieTitles() {}
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore() {}
+function getHighestMetascore(movies) {}
 
 /**
  * getAverageIMDBRating()
@@ -54,7 +61,7 @@ function getHighestMetascore() {}
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+function getAverageIMDBRating(movies) {}
 
 /**
  * countByRating()
@@ -142,7 +149,7 @@ function getAllMoviesReleasedAtOrBeforeYear() {}
  *  getBiggestBoxOfficeMovie(movies);
  *  //> "Incredibles 2"
  */
-function getBiggestBoxOfficeMovie() {}
+function getBiggestBoxOfficeMovie(movies) {}
 
 // Do not change anything below this line.
 module.exports = {
