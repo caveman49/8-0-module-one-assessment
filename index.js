@@ -69,7 +69,17 @@ function getHighestMetascore(movies) {
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating(movies) {}
+function getAverageIMDBRating(movies) {
+  let avIMDB = 0;
+  for (let i = 0; i < movies.length; i++) {
+    avIMDB += Number(movies[i].imdbRating)
+  }
+  if (!movies.length){
+    return avIMDB
+  }
+  return avIMDB / movies.length
+}
+console.log(getAverageIMDBRating(exampleMovies));
 
 /**
  * countByRating()
@@ -157,7 +167,15 @@ function getAllMoviesReleasedAtOrBeforeYear() {}
  *  getBiggestBoxOfficeMovie(movies);
  *  //> "Incredibles 2"
  */
-function getBiggestBoxOfficeMovie(movies) {}
+function getBiggestBoxOfficeMovie(movies) {
+  let highestBoxOffice = []
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].boxOffice > highestBoxOffice) {
+      highestBoxOffice = Number(movies[i].boxOffice)
+    }
+  }
+  return highestBoxOffice;
+}
 
 // Do not change anything below this line.
 module.exports = {
