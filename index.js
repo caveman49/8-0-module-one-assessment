@@ -48,7 +48,15 @@ console.log(getAllMovieTitles(exampleMovies));
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore(movies) {}
+function getHighestMetascore(movies) {
+  let highestMeta = 0;
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].metascore > highestMeta) {
+      highestMeta = Number(movies[i].metascore)
+    }
+  }
+  return highestMeta;
+}
 
 /**
  * getAverageIMDBRating()
