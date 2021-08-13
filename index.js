@@ -199,7 +199,30 @@ function getAllMoviesReleasedAtOrBeforeYear() {}
  *  getBiggestBoxOfficeMovie(movies);
  *  //> "Incredibles 2"
  */
-function getBiggestBoxOfficeMovie(movies) {}
+function getBiggestBoxOfficeMovie(movies) {
+  let highestBoxOffice = Number(movies[0].boxOffice);
+  let highestBoxOfficeTitle = "";
+  
+  for (let i = 0; i < movies.length; i++) {
+  //   if (Number(movies[i].boxOffice) > highestBoxOffice) {
+  //     highestBoxOffice = Number(movies[i].boxOffice);
+  //     highestBoxOfficeTitle = movies[i].title
+  //   }
+  // }
+  // return highestBoxOfficeTitle;
+
+  let highestBoxOfficeTitle = movies[0];
+  
+  for (let i = 0; i < movies.length; i++) {
+    if (Number(movies[i].boxOffice) > Number(highestBoxOfficeTitle.boxOffice)) {
+      highestBoxOfficeTitle = movies[i];
+    }
+  }
+  return highestBoxOfficeTitle.title;
+}
+//Why do none of these functions work??
+
+console.log(getBiggestBoxOfficeMovie(exampleMovies));
 
 // Do not change anything below this line.
 module.exports = {
